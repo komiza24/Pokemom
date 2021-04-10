@@ -5,14 +5,13 @@
  */
 package pokemon;
 
-import display.*;
 
 
 public class Launcher {
 
     public static void main(String[] args) {
 
-        Game game = new Game("Title",1280,1152);
+        Game game = new Game("Title",1280,720);
         game.start();
 
     }

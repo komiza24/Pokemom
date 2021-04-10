@@ -15,15 +15,21 @@ import pokemon.Game;
  */
 public class Player extends Creatures {
 
-    private Game game;
+  
+    
+    
+    
     private long lastTime, timer; 
     private int timeToWaitUntilTick; 
+    
+    
     public Player(Game game, float x, float y) {
 
-        super(x, y, Creatures.DEFAULT_CREATURE_WIDTH, Creatures.DEFAULT_CREATURE_HEIGHT);
-        this.game = game;
+        super(game, x, y, Creatures.DEFAULT_CREATURE_WIDTH, Creatures.DEFAULT_CREATURE_HEIGHT);
+     
         
 // timer 
+
 timer = 0;
 lastTime = System.currentTimeMillis(); 
 timeToWaitUntilTick =500; 
@@ -32,7 +38,7 @@ timeToWaitUntilTick =500;
 
     @Override
     public void tick() {
-        
+       
         timer += System.currentTimeMillis() - lastTime; 
         lastTime = System.currentTimeMillis(); 
         
@@ -42,14 +48,16 @@ timeToWaitUntilTick =500;
         
         getInput();
         move();
+     
         
             
         timer = 0; 
         
         
         }
-        
-        
+     
+       
+        game.getGameCamera().centerOnEntity(this);
         
     }
 
@@ -85,13 +93,12 @@ timeToWaitUntilTick =500;
 
     @Override
     public void render(Graphics g) {
-        // hier statt barrel später Spiler IMG einfügen.
     
         
    
         
         
-         g.drawImage(Assets.player, (int) x*Creatures.DEFAULT_CREATURE_WIDTH, (int) y*Creatures.DEFAULT_CREATURE_HEIGHT, width, height, null);
+         g.drawImage(Assets.player, (int) (x -game.getGameCamera().getxOffset()), (int) (y - game.getGameCamera().getyOffset()), width, height, null);
             
 
         

@@ -21,11 +21,7 @@ public class Tile {
     public static Tile pathTile = new PathTile(1); 
     public static Tile pathWithGrassTile = new PathWithGrass(2); 
     public static Tile grassTile = new GrassTile(3); 
-   
-    public static Tile barrelTopLeft = new BarrelTopLeft(4); 
-    public static Tile barrelTopRight = new BarrelTopRight(5); 
-    public static Tile barrelBotLeft = new BarrelBotLeft(6); 
-    public static Tile barrelBotRight = new BarrelBotRight(7); 
+    
    
 
     

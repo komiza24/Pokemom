@@ -7,6 +7,7 @@ package pokemon;
 
 import display.Display;
 import gfx.Assets;
+import gfx.GameCamera;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import input.KeyManager;
@@ -17,7 +18,7 @@ import states.State;
 public class Game implements Runnable {
 
     private Display display;
-    public int width, height;
+    private int width, height;
     public String title;
 
     private Thread thread;
@@ -33,6 +34,9 @@ public class Game implements Runnable {
     // Input
     private KeyManager keyManager; 
     
+    
+    // Camera 
+    private GameCamera gameCamera; 
     
     
 // konstruktor 
@@ -50,6 +54,10 @@ public class Game implements Runnable {
         display.getFrame().addKeyListener(keyManager);
         
         Assets.init();
+        
+        
+        gameCamera = new GameCamera(this, 0, 0); 
+        
 
         gameState = new GameState(this);
         menuState = new MenuState(this);
@@ -133,10 +141,18 @@ public class Game implements Runnable {
     
     
     
+    public GameCamera getGameCamera(){ 
+        return gameCamera; 
+    }
     
-    
-    
-    
+    public int getWidth(){ 
+        
+        return width; 
+    }
+      public int getHeight(){ 
+        
+        return height; 
+    }
     
     public synchronized void start() {
         if (running) {

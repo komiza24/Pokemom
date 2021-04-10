@@ -24,8 +24,8 @@ public abstract class Creatures extends Entity {
 
     protected float xMove, yMove;
 
-    public Creatures(float x, float y, int width, int height) {
-        super(x, y, width, height);
+    public Creatures(Game game, float x, float y, int width, int height) {
+        super(game, x, y, width, height);
         health = DEFAULT_HEALTH;
         speed = DEFAULT_SPPED;
         xMove = 0; 
@@ -36,8 +36,8 @@ public abstract class Creatures extends Entity {
     public void move(){ 
        
         
-        x+= xMove; 
-        y+= yMove; 
+        x+= xMove*Creatures.DEFAULT_CREATURE_HEIGHT; 
+        y+= yMove*Creatures.DEFAULT_CREATURE_WIDTH; 
        
         
         
