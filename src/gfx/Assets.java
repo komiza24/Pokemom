@@ -35,7 +35,7 @@ public class Assets {
 
         SpriteSheet mainPlayer16x16 = new SpriteSheet(ImageLoader.loadImage("/textures/mainPlayerSheet16x16.gif"));
         SpriteSheet backgroudTiles8x8 = new SpriteSheet(ImageLoader.loadImage("/textures/backgoundTiles8x8.gif"));
-        SpriteSheet tileSet_1 = new SpriteSheet(ImageLoader.loadImage("/textures/tileSet1_8x8"));
+        SpriteSheet tileSet_1 = new SpriteSheet(ImageLoader.loadImage("/textures/tileSet1_8x8.gif"));
         
         player = mainPlayer16x16.crop(width * 2, 0, width * 2, height * 2);
         

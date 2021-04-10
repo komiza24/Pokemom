@@ -8,7 +8,6 @@ package entities.creatures;
 import gfx.Assets;
 import java.awt.Graphics;
 import pokemon.Game;
-import tiles.Tile;
 
 /**
  *
@@ -27,7 +26,7 @@ public class Player extends Creatures {
 // timer 
 timer = 0;
 lastTime = System.currentTimeMillis(); 
-timeToWaitUntilTick = 500; 
+timeToWaitUntilTick =500; 
 
     }
 
@@ -92,7 +91,7 @@ timeToWaitUntilTick = 500;
    
         
         
-         g.drawImage(Assets.player, (int) x*Creatures.DEFAULT_CREATURE_HEIGHT, (int) y*Creatures.DEFAULT_CREATURE_WIDTH, width, height, null);
+         g.drawImage(Assets.player, (int) x*Creatures.DEFAULT_CREATURE_WIDTH, (int) y*Creatures.DEFAULT_CREATURE_HEIGHT, width, height, null);
             
 
         

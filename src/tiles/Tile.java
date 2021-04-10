@@ -26,7 +26,7 @@ public class Tile {
     public static Tile barrelTopRight = new BarrelTopRight(5); 
     public static Tile barrelBotLeft = new BarrelBotLeft(6); 
     public static Tile barrelBotRight = new BarrelBotRight(7); 
-    
+   
 
     
     

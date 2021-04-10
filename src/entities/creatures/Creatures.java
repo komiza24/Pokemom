@@ -15,7 +15,7 @@ import pokemon.Game;
 public abstract class Creatures extends Entity {
 
     public static final int DEFAULT_HEALTH = 10;
-    public static final float DEFAULT_SPPED = 1; 
+    public static final float DEFAULT_SPPED = 1f; 
     public static final int DEFAULT_CREATURE_WIDTH = 64,
                             DEFAULT_CREATURE_HEIGHT = 64;
 
