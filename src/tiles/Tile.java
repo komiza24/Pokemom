@@ -21,9 +21,10 @@ public class Tile {
     public static Tile pathTile = new PathTile(1); 
     public static Tile pathWithGrassTile = new PathWithGrass(2); 
     public static Tile grassTile = new GrassTile(3); 
-    
-   
-
+    public static Tile grassHighTile = new GrassHighTile(4);
+    public static Tile wallTopTile = new WallTopTile(5);
+    public static Tile wallRightTile = new WallRightTile(6); 
+    public static Tile wallLeftTile = new WallLeftTile(7);
     
     
     

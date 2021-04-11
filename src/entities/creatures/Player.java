@@ -32,7 +32,7 @@ public class Player extends Creatures {
 
 timer = 0;
 lastTime = System.currentTimeMillis(); 
-timeToWaitUntilTick =500; 
+timeToWaitUntilTick =400; 
 
     }
 

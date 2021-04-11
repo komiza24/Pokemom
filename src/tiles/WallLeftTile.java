@@ -11,10 +11,13 @@ import gfx.Assets;
  *
  * @author Brehm
  */
-public class GrassTile extends Tile{
+public class WallLeftTile extends Tile{
     
-    public GrassTile(int id) {
-        super(Assets.grass, id);
+    public WallLeftTile(int id) {
+        super(Assets.wallLeft, id);
     }
-    
+        @Override
+        public boolean isSolid(){
+        return true; 
+    }
 }

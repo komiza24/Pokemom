@@ -11,10 +11,10 @@ import gfx.Assets;
  *
  * @author Brehm
  */
-public class GrassTile extends Tile{
+public class GrassHighTile extends Tile {
     
-    public GrassTile(int id) {
-        super(Assets.grass, id);
+    public GrassHighTile(int id) {
+        super(Assets.grassHigh, id);
     }
     
 }
