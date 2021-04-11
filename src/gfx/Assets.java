@@ -7,7 +7,7 @@ public class Assets {
     // Kleinst mögliche größe des grids in den Sprite Sheets. 
     // Bei größeren muss skaliert werden !!!!
     private static final int width = 8, height = 8;
-    public static BufferedImage player, path, mountainTopBackEdge, mountainBackEdgeLoweringToRight, flower, bridge, house1RoofBackCornerLeft, house1RoofBackLoweringToLeft, house1RoofBackEdge,
+    public static BufferedImage player_default_down, player_default_up, player_default_right, player_default_left, path, mountainTopBackEdge, mountainBackEdgeLoweringToRight, flower, bridge, house1RoofBackCornerLeft, house1RoofBackLoweringToLeft, house1RoofBackEdge,
             house1RoofBackLoweringToRight, house1RoofBackCornerRight, window, doorTopLeft, doorTopRight, empty, fenceTop, houseWallLeft, bicycleFenceVertical, mountainTop, house2Roof, unknown1,
             water, house1RoofEgdeLeft, house1RoofEdgeFrontLoweringStartLeftTop, houseRoofCornerFront, house1RoofEdgeFrontLoweringStartRightTop, house1RoofEgdeRight, house1WallBottom, doorBotLeft,
             doorBotRight, unknown2, mountainBackEdgeLoweringToLeft, houseWallRight, bicycleFenceHorizontal, bicycleFenceCorner, houseWall, unknown3, mountainFrontLoweringEdgeRight, house1RoofFrontCornerLeft,
@@ -18,12 +18,37 @@ public class Assets {
             houseWallFrontCornerLeft, houseWallFrontCornerRight, treeLeftBot, treeRightBot, grassHigh, house2RoofEdgeBack, wallRight, fenceBot, signBotLeft, signBotRight, mountainEnterenceBotLeft,
             mountainEnterenceBotRight, house2RoofSideEdge, pathWithStone, house2RoofCornerFrontLeft, house2RoofCornerFrontRight, unknown5, unknown6;
 
+    public static BufferedImage[] player_down, player_up, player_right, player_left;
+
     public static void init() {
         SpriteSheet mainPlayer16x16 = new SpriteSheet(ImageLoader.loadImage("/textures/mainPlayerSheet16x16.gif"));
-        SpriteSheet backgroudTiles8x8 = new SpriteSheet(ImageLoader.loadImage("/textures/backgoundTiles8x8.gif"));
         SpriteSheet tileSet_1 = new SpriteSheet(ImageLoader.loadImage("/textures/tileSet1_8x8.gif"));
 
-        player = mainPlayer16x16.crop(width * 2, 0, width * 2, height * 2);
+        //animations 
+        player_down = new BufferedImage[3];
+
+        player_down[0] = mainPlayer16x16.crop(0, 0, width * 2, height * 2);
+        player_down[1] = mainPlayer16x16.crop(width * 2, 0, width * 2, height * 2);  // standing still down
+        player_down[2] = mainPlayer16x16.crop(width * 4, 0, width * 2, height * 2);
+
+        player_up = new BufferedImage[3];
+        player_up[0] = mainPlayer16x16.crop(0, height * 2, width * 2, height * 2);
+        player_up[1] = mainPlayer16x16.crop(width * 2, height * 2, width * 2, height * 2);  // standing still up
+        player_up[2] = mainPlayer16x16.crop(width * 4, height * 2, width * 2, height * 2);
+
+        player_right = new BufferedImage[2];
+        player_right[0] = mainPlayer16x16.crop(width * 6, height * 2, width * 2, height * 2);  // standing still right
+        player_right[1] = mainPlayer16x16.crop(width * 8, height * 2, width * 2, height * 2);
+
+        player_left = new BufferedImage[2];
+        player_left[0] = mainPlayer16x16.crop(width * 6, 0, width * 2, height * 2);  // standing still left
+        player_left[1] = mainPlayer16x16.crop(width * 8, 0, width * 2, height * 2);
+
+        // kleine abhilfe .... muss noch überarbeitet werden !!!!!! (hat eig sehr gut geklappt mal schauen ob es überarbeitet werden muss )
+        player_default_down = mainPlayer16x16.crop(width * 2, 0, width * 2, height * 2);
+        player_default_up = mainPlayer16x16.crop(width * 2, height * 2, width * 2, height * 2);
+        player_default_right = mainPlayer16x16.crop(width * 6, height * 2, width * 2, height * 2);
+        player_default_left = mainPlayer16x16.crop(width * 6, 0, width * 2, height * 2);
 
         // erste Spalte von tileSet1_8x8
         path = tileSet_1.crop(0, 0, width, height);
