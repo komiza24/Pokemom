@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pokemon;
 
 import display.Display;
@@ -20,95 +15,74 @@ public class Game implements Runnable {
     private Display display;
     private int width, height;
     public String title;
-
     private Thread thread;
     private boolean running = false;
-
     private BufferStrategy bs;
     private Graphics g;
 
     // states ! 
     private State gameState;
     private State menuState;
-    
+
     // Input
-    private KeyManager keyManager; 
-    
-    
+    private KeyManager keyManager;
+
     // Camera 
-    private GameCamera gameCamera; 
-    
-    
-// konstruktor 
+    private GameCamera gameCamera;
+
+    //Handeler
+    private Handler handler;
+
+    // konstruktor 
     public Game(String title, int width, int height) {
         this.width = width;
         this.height = height;
         this.title = title;
-        keyManager = new KeyManager(); 
+        keyManager = new KeyManager();
     }
 
     // Alles vor dem start initalisieren.
     private void init() {
         display = new Display(title, width, height);
-        
         display.getFrame().addKeyListener(keyManager);
-        
         Assets.init();
-        
-        
-        gameCamera = new GameCamera(this, 0, 0); 
-        
-
-        gameState = new GameState(this);
-        menuState = new MenuState(this);
+        gameCamera = new GameCamera(this, 0, 0);
+        handler = new Handler(this);
+        gameState = new GameState(handler);
+        menuState = new MenuState(handler);
         State.setState(gameState);
     }
 
     private void update() {
-         keyManager.tick();
-        
-        
+        keyManager.tick();
         if (State.getState() != null) {
             State.getState().tick();
 
         }
     }
 
-
-    
-    
     private void render() {
         bs = display.getCanvas().getBufferStrategy();
         if (bs == null) {
             display.getCanvas().createBufferStrategy(3);
             return;
         }
-        g = bs.getDrawGraphics();    // create the paintbrush ! 
-
+        // create the paintbrush ! 
+        g = bs.getDrawGraphics();
         // clear screen here
         g.clearRect(0, 0, width, height);
         // Start drawing
-
         if (State.getState() != null) {
             State.getState().render(g);
         }
-
-   
-        
-   
-
-
-
         // End drawing 
         bs.show();
         g.dispose();
-
     }
 
     @Override
     public void run() {
         init();
-
         // so viele ticks in einer sec
         int fps = 60;
         double timePerTick = 1000000000 / fps;
@@ -121,39 +95,34 @@ public class Game implements Runnable {
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
             lastTime = now;
-
             if (delta >= 1) {
                 update();
                 render();
                 delta--;
             }
-
         }
         // Thread nochmal stoppen falls aus i einem Grund nicht beendet wurde.
         stop();
-
     }
 
-    
-    public KeyManager getKeyManager(){ 
-        return keyManager; 
+    public KeyManager getKeyManager() {
+        return keyManager;
     }
-    
-    
-    
-    public GameCamera getGameCamera(){ 
-        return gameCamera; 
+
+    public GameCamera getGameCamera() {
+        return gameCamera;
     }
-    
-    public int getWidth(){ 
-        
-        return width; 
+
+    public int getWidth() {
+
+        return width;
     }
-      public int getHeight(){ 
-        
-        return height; 
+
+    public int getHeight() {
+
+        return height;
     }
-    
+
     public synchronized void start() {
         if (running) {
             return;

@@ -1,54 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package states;
 
 import entities.creatures.Player;
 import java.awt.Graphics;
-import pokemon.Game;
+import pokemon.Handler;
 import worlds.World;
 
-/**
- *
- * @author Brehm
- */
 public class GameState extends State {
-    
-    private Player player; 
-    private World world; 
 
-    
-    
-    public GameState(Game game){ 
-            super(game);
-            player = new Player(game,0,0); 
-            world = new World(game,"res/worlds/world1.txt"); 
-   
+    private Player player;
+    private World world;
+
+    public GameState(Handler handler) {
+        super(handler);
+        world = new World(handler, "res/worlds/world1.txt");
+        handler.setWorld(world);
+        player = new Player(handler, 0, 0);
     }
-    
 
     @Override
     public void tick() {
         world.tick();
         player.tick();
- 
     }
 
     @Override
     public void render(Graphics g) {
         world.render(g);
-        
-        
-        
-        player.render(g); 
-  
-        
-        
-        
+        player.render(g);
     }
-    
-    
-    
+
 }

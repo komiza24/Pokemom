@@ -1,30 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entities;
 
 import java.awt.Graphics;
-import pokemon.Game;
+import pokemon.Handler;
 
-/**
- *
- * @author Brehm
- */
 public abstract class Entity {
 
-    protected Game game; 
+    protected Handler handler;
     protected float x, y;
     protected int width, height;
 
-    public Entity(Game game, float x, float y, int width, int height) {
-        this.game = game; 
+    public Entity(Handler handler, float x, float y, int width, int height) {
+        this.handler = handler;
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-
     }
 
     public abstract void tick();

@@ -1,24 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Brehm with help from Youtube ! 
- */
 public class Display {
 
     private JFrame frame;
-    private Canvas canvas; 
-    
-
+    private Canvas canvas;
     private String title;
     private int width, height;
 
@@ -26,7 +15,6 @@ public class Display {
         this.title = title;
         this.width = width;
         this.height = height;
-
         createDisplay();
     }
 
@@ -37,28 +25,23 @@ public class Display {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        
+
         canvas = new Canvas();
-        canvas.setPreferredSize(new Dimension(width,height));
-        canvas.setMaximumSize(new Dimension(width,height));
-        canvas.setMinimumSize(new Dimension(width,height));
+        canvas.setPreferredSize(new Dimension(width, height));
+        canvas.setMaximumSize(new Dimension(width, height));
+        canvas.setMinimumSize(new Dimension(width, height));
         canvas.setFocusable(false);
-        
+
         frame.add(canvas);
         frame.pack();
     }
-    
-    
-    
-    // getter schreiben statt Canvas public zu machen BABA trick ! 
-   public Canvas getCanvas(){ 
-       return canvas; 
-   }
-    
-    public JFrame getFrame(){ 
-        
-       return frame; 
+
+    public Canvas getCanvas() {
+        return canvas;
     }
-    
-    
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
 }
