@@ -106,7 +106,9 @@ public class Game implements Runnable {
     }
 
     public KeyManager getKeyManager() {
-        return keyManager;
+       
+            return keyManager;
+        
     }
 
     public GameCamera getGameCamera() {

@@ -2,6 +2,7 @@ package gfx;
 
 import entities.Entity;
 import pokemon.Game;
+import tiles.Tile;
 
 public class GameCamera {
 
@@ -15,8 +16,8 @@ public class GameCamera {
     }
 
     public void centerOnEntity(Entity e) {
-        xOffset = e.getX() - game.getWidth() / 2 + e.getHeight() / 2;
-        yOffset = e.getY() - game.getHeight() / 2 + e.getHeight() / 2;
+        xOffset = e.getX()*Tile.TILEWIDTH - game.getWidth() / 2 + e.getHeight() / 2;
+        yOffset = e.getY()*Tile.TILEHEIGHT - game.getHeight() / 2 + e.getHeight() / 2;
     }
 
     public void move(float xAmt, float yAmt) {

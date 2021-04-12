@@ -25,24 +25,23 @@ public class Assets {
         SpriteSheet tileSet_1 = new SpriteSheet(ImageLoader.loadImage("/textures/tileSet1_8x8.gif"));
 
         //animations 
-        player_down = new BufferedImage[3];
+        player_down = new BufferedImage[2];
 
         player_down[0] = mainPlayer16x16.crop(0, 0, width * 2, height * 2);
-        player_down[1] = mainPlayer16x16.crop(width * 2, 0, width * 2, height * 2);  // standing still down
-        player_down[2] = mainPlayer16x16.crop(width * 4, 0, width * 2, height * 2);
+        player_down[1] = mainPlayer16x16.crop(width * 4, 0, width * 2, height * 2);
 
-        player_up = new BufferedImage[3];
+        player_up = new BufferedImage[2];
         player_up[0] = mainPlayer16x16.crop(0, height * 2, width * 2, height * 2);
-        player_up[1] = mainPlayer16x16.crop(width * 2, height * 2, width * 2, height * 2);  // standing still up
-        player_up[2] = mainPlayer16x16.crop(width * 4, height * 2, width * 2, height * 2);
+        player_up[1] = mainPlayer16x16.crop(width * 4, height * 2, width * 2, height * 2);
 
         player_right = new BufferedImage[2];
-        player_right[0] = mainPlayer16x16.crop(width * 6, height * 2, width * 2, height * 2);  // standing still right
-        player_right[1] = mainPlayer16x16.crop(width * 8, height * 2, width * 2, height * 2);
-
+        player_right[0] = mainPlayer16x16.crop(width * 8, height * 2, width * 2, height * 2); // walking
+        player_right[1] = mainPlayer16x16.crop(width * 6, height *2 , width * 2, height * 2);  // standing still right
+        
+        
         player_left = new BufferedImage[2];
-        player_left[0] = mainPlayer16x16.crop(width * 6, 0, width * 2, height * 2);  // standing still left
-        player_left[1] = mainPlayer16x16.crop(width * 8, 0, width * 2, height * 2);
+        player_left[0] = mainPlayer16x16.crop(width * 8, 0, width * 2, height * 2); //walking
+        player_left[1] = mainPlayer16x16.crop(width * 6, 0, width * 2, height * 2);  // standing still left
 
         // kleine abhilfe .... muss noch überarbeitet werden !!!!!! (hat eig sehr gut geklappt mal schauen ob es überarbeitet werden muss )
         player_default_down = mainPlayer16x16.crop(width * 2, 0, width * 2, height * 2);
