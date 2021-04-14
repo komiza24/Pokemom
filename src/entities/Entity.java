@@ -20,10 +20,34 @@ public abstract class Entity {
         
         bounds = new Rectangle(0,0,width,height); 
     }
-
+    
+    
     public abstract void tick();
 
     public abstract void render(Graphics g);
+    /*
+    public boolean checkEntitiyCollision(float xOffset, float yOffset){
+    
+        
+        for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+            
+            if (e.equals(this)) {
+                continue;
+            }
+            
+            if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
+                return true; 
+            }
+        }
+        return false; 
+    }
+    
+    
+    public Rectangle getCollisionBounds(float xOffset, float yOffset){
+        // Hier evtl Cords * Tile.TILEHEIGHT btw WIDTH und :  evtl bounds -1  ausprobieren ! 
+           return new Rectangle((int)(x + bounds.x + xOffset ),(int)(y + bounds.y + yOffset), bounds.width, bounds.height); 
+    }
+    */
 
     public float getX() {
         return x;
@@ -33,7 +57,7 @@ public abstract class Entity {
         return y;
     }
 
-    public int getWidth() {
+    public int getWidth() { 
         return width;
     }
 

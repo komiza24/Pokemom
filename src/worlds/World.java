@@ -1,5 +1,8 @@
 package worlds;
 
+import entities.EntityManager;
+import entities.creatures.Player;
+import entities.statics.Barrel;
 import java.awt.Graphics;
 import pokemon.Handler;
 import tiles.Tile;
@@ -12,13 +15,47 @@ public class World {
     private int spawnX, spawnY;
     private int[][] tiles;
 
+    // Entities
+    private EntityManager entityManager;
+
+ 
+
     public World(Handler handler, String path) {
         this.handler = handler;
+
+        entityManager = new EntityManager(handler, new Player(handler, 12, 10));
+        
+        
+        // add Entities.  nur ganze Zahlen benutzen. 2 4 6 8 damit die Entity im 16x16 Raster bleibt (Map besteht aus 8x8 Tiles) entities sind aber unterschiedlich groß bestehen meistens aus einem oder mehreren 16x16 Tiles. 
+        
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 4*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 6*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 8*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 10*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 12*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 14*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 16*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 20*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 22*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 24*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 28*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 30*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 32*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        
+
         loadWorld(path);
+
+        entityManager.getPlayer().setX(spawnX);
+        entityManager.getPlayer().setY(spawnY);
+
     }
 
     public void tick() {
-
+        entityManager.tick();
     }
 
     public void render(Graphics g) {
@@ -31,14 +68,18 @@ public class World {
                 getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - handler.getGameCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
             }
         }
+        
+        //Entities
+        entityManager.render(g);
+        
     }
 
     public Tile getTile(int x, int y) {
-        
-        if (x<0 || y<0 || x >= width || y >= height) {
-            return Tile.emptyTile; 
+
+        if (x < 0 || y < 0 || x >= width || y >= height) {
+            return Tile.emptyTile;
         }
-        
+
         Tile t = Tile.tiles[tiles[x][y]];
         if (t == null) {
             return Tile.emptyTile;
@@ -62,4 +103,12 @@ public class World {
         }
     }
 
+       public EntityManager getEntityManager() {
+        return entityManager;
+    }
+    
+    
+  
+    
+    
 }

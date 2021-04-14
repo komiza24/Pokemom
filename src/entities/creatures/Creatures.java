@@ -9,7 +9,7 @@ public abstract class Creatures extends Entity {
     public static final int DEFAULT_HEALTH = 10;
     public static final float DEFAULT_SPPED =0.125f;   // größe des Spieler damit er sich nur in Tiles bewegt (1 tile ist eig 8x8 aber spieler 16x16 ) 
     public static final int DEFAULT_CREATURE_WIDTH = 64,
-            DEFAULT_CREATURE_HEIGHT = 64;
+                            DEFAULT_CREATURE_HEIGHT = 64;
     protected int health;
     protected float speed;
     protected float xMove, yMove;
@@ -23,9 +23,13 @@ public abstract class Creatures extends Entity {
     }
 
     public void move() {
+       //if (!checkEntitiyCollision(xMove, 0f)) 
+            moveX();
         
-       moveX();
-       moveY();
+       // if (!checkEntitiyCollision(0f, yMove)) 
+             moveY();
+        
+    
         
         
     }

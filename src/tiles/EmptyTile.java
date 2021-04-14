@@ -9,6 +9,6 @@ public class EmptyTile extends Tile {
     }
         @Override
     public boolean isSolid() {
-        return true;
+        return false;
     }
 } 
