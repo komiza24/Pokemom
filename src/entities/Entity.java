@@ -3,6 +3,7 @@ package entities;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import pokemon.Handler;
+import tiles.Tile;
 
 public abstract class Entity {
 
@@ -25,7 +26,7 @@ public abstract class Entity {
     public abstract void tick();
 
     public abstract void render(Graphics g);
-    /*
+    
     public boolean checkEntitiyCollision(float xOffset, float yOffset){
     
         
@@ -47,7 +48,7 @@ public abstract class Entity {
         // Hier evtl Cords * Tile.TILEHEIGHT btw WIDTH und :  evtl bounds -1  ausprobieren ! 
            return new Rectangle((int)(x + bounds.x + xOffset ),(int)(y + bounds.y + yOffset), bounds.width, bounds.height); 
     }
-    */
+    
 
     public float getX() {
         return x;

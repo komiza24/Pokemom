@@ -46,7 +46,19 @@ public class World {
         entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 32*Tile.TILEHEIGHT)); 
         entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
         
-
+        
+        entityManager.addEntity(new Barrel(handler, 6*Tile.TILEWIDTH, 12*Tile.TILEHEIGHT));
+         entityManager.addEntity(new Barrel(handler, 14*Tile.TILEWIDTH, 12*Tile.TILEHEIGHT));
+         
+         
+         entityManager.addEntity(new Barrel(handler, 10*Tile.TILEWIDTH, 16*Tile.TILEHEIGHT));
+        
+         entityManager.addEntity(new Barrel(handler, 10*Tile.TILEWIDTH, 8*Tile.TILEHEIGHT));
+        
+        
+        
+        
+        
         loadWorld(path);
 
         entityManager.getPlayer().setX(spawnX);
@@ -108,7 +120,12 @@ public class World {
     }
     
     
-  
+    
+    
+    
+    
+    
+    
     
     
 }

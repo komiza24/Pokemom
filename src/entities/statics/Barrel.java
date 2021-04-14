@@ -18,7 +18,10 @@ public class Barrel extends StaticEntity {
 
     public Barrel(Handler handler, float x, float y) {
         super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
-
+        bounds.x = 0; 
+        bounds.y = 0; 
+        bounds.width = 64; 
+        bounds.height = 64; 
         
     }
 
