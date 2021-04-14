@@ -16,6 +16,9 @@ public class Player extends Creatures {
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creatures.DEFAULT_CREATURE_WIDTH, Creatures.DEFAULT_CREATURE_HEIGHT);
+        
+      
+        
 
         // animations                       Time to wait = time to wait until get next input my keymanager so läuft die animation genau 1 mal pro Tile(Feld 16x16 micht 8x8 ! )
         animDown = new Animation(175, Assets.player_down);
@@ -74,12 +77,16 @@ public class Player extends Creatures {
     public void render(Graphics g) {
 
         g.drawImage(getCurrentAnimationFrame(), (int) (x * Tile.TILEWIDTH - handler.getGameCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()), width, height, null);
-/*
+        
+        
+        // HitBox Rectagle  :D 
+        
+        /*
         g.setColor(Color.RED);
         g.fillRect((int) (x * Tile.TILEWIDTH + bounds.x - handler.getGameCamera().getxOffset()),
                 (int) (y * Tile.TILEHEIGHT + bounds.y - handler.getGameCamera().getyOffset()),
                 bounds.width, bounds.height);
-*/
+          */    
     }
 
     private BufferedImage getCurrentAnimationFrame() {
@@ -94,6 +101,11 @@ public class Player extends Creatures {
             return animDown.getCurrentFrame();
         } else {
 
+            
+            
+            
+            
+           
             switch (direktion) {
                 case 1:
                     return Assets.player_default_up;
@@ -104,7 +116,7 @@ public class Player extends Creatures {
                 default:
                     return Assets.player_default_down;
             }
-
+           
         }
 
     }

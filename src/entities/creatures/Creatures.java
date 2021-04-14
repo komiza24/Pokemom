@@ -34,12 +34,28 @@ public abstract class Creatures extends Entity {
     public void moveX(){ 
        
         if(xMove > 0){  //right
-            int tx = (int) (x*Tile.TILEWIDTH + xMove + bounds.x + bounds.width)  /Tile.TILEWIDTH; 
-            if(!collisionWithTile(tx, (int) (y*Tile.TILEHEIGHT + bounds.y) / Tile.TILEHEIGHT)){
+
+            
+            int tx = (int) (x*Tile.TILEWIDTH + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH ; 
+            
+            if(!collisionWithTile(tx,(int)(y*Tile.TILEHEIGHT + bounds.y   ) / Tile.TILEHEIGHT) &&  // oben rechts
+                 !collisionWithTile(tx, (int)  (y*Tile.TILEHEIGHT + bounds.y - 1 + bounds.height) / Tile.TILEHEIGHT)){  // unten rechts
+                x += xMove; 
+            } 
+  
+  
+    
+            
+        }else if(xMove < 0){ // left
+
+       
+            int tx = (int) (x*Tile.TILEWIDTH + xMove + bounds.x) / Tile.TILEWIDTH ; 
+            
+            if(!collisionWithTile(tx,(int)(y*Tile.TILEHEIGHT + bounds.y  ) / Tile.TILEHEIGHT) &&  // oben links
+                 !collisionWithTile(tx, (int)  (y*Tile.TILEHEIGHT + bounds.y - 1 + bounds.height) / Tile.TILEHEIGHT)){  // unten links
                 x += xMove; 
             }
-        }else if(xMove < 0){
-               x += xMove; 
+
         }
         
         
@@ -47,9 +63,45 @@ public abstract class Creatures extends Entity {
         
     }
     
+    
+    
     public void moveY(){ 
         
-        y += yMove;
+        if (yMove < 0) {//up
+  
+            int ty = (int) (y*Tile.TILEHEIGHT + yMove + bounds.y) / Tile.TILEHEIGHT; 
+            
+            if(!collisionWithTile((int)(x*Tile.TILEWIDTH + bounds.x)/ Tile.TILEWIDTH, ty) &&// oben links
+                 !collisionWithTile((int)(x*Tile.TILEWIDTH + bounds.x - 1 + bounds.width)/ Tile.TILEWIDTH, ty)   ){   // oben rechts
+                y += yMove; 
+           
+        }
+
+            
+            
+        }else if (yMove > 0) { //down
+
+             int ty = (int) (y*Tile.TILEHEIGHT + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT; 
+            
+            if(!collisionWithTile((int)(x*Tile.TILEWIDTH + bounds.x )/ Tile.TILEWIDTH, ty) &&// oben links
+                 !collisionWithTile((int)(x*Tile.TILEWIDTH + bounds.x - 1 + bounds.width)/ Tile.TILEWIDTH, ty)   ){   // oben rechts
+                y += yMove; 
+            
+        }
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     

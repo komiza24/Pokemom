@@ -15,6 +15,7 @@ public class Tile {
     public static Tile wallTopTile = new WallTopTile(5);
     public static Tile wallRightTile = new WallRightTile(6);
     public static Tile wallLeftTile = new WallLeftTile(7);
+  
 
     //class
     public static final int TILEWIDTH = 32, TILEHEIGHT = 32;
