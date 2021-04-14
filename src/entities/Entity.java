@@ -27,6 +27,10 @@ public abstract class Entity {
 
     public abstract void render(Graphics g);
     
+    
+    /*
+    
+    
     public boolean checkEntitiyCollision(float xOffset, float yOffset){
     
         
@@ -46,8 +50,13 @@ public abstract class Entity {
     
     public Rectangle getCollisionBounds(float xOffset, float yOffset){
         // Hier evtl Cords * Tile.TILEHEIGHT btw WIDTH und :  evtl bounds -1  ausprobieren ! 
-           return new Rectangle((int)(x + bounds.x + xOffset ),(int)(y + bounds.y + yOffset), bounds.width, bounds.height); 
+           return new Rectangle((int)(x - bounds.x + xOffset),(int)(y + bounds.y + yOffset), bounds.width, bounds.height); 
     }
+    
+    */
+    
+    
+    
     
 
     public float getX() {

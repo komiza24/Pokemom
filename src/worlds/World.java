@@ -3,6 +3,8 @@ package worlds;
 import entities.EntityManager;
 import entities.creatures.Player;
 import entities.statics.Barrel;
+import entities.statics.Fence;
+import entities.statics.Sign;
 import java.awt.Graphics;
 import pokemon.Handler;
 import tiles.Tile;
@@ -23,7 +25,7 @@ public class World {
     public World(Handler handler, String path) {
         this.handler = handler;
 
-        entityManager = new EntityManager(handler, new Player(handler, 12, 10));
+        entityManager = new EntityManager(handler, new Player(handler, 10, 12));
         
         
         // add Entities.  nur ganze Zahlen benutzen. 2 4 6 8 damit die Entity im 16x16 Raster bleibt (Map besteht aus 8x8 Tiles) entities sind aber unterschiedlich groß bestehen meistens aus einem oder mehreren 16x16 Tiles. 
@@ -45,20 +47,85 @@ public class World {
         entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 30*Tile.TILEHEIGHT)); 
         entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 32*Tile.TILEHEIGHT)); 
         entityManager.addEntity(new Barrel(handler, 0*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 2*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 16*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 18*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 20*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 22*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 24*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 26*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 28*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 30*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 32*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 34*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 36*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 34*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 32*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 30*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 28*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 24*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 22*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 20*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 16*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 14*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 12*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 10*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 8*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 6*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 4*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 38*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT)); 
+        entityManager.addEntity(new Barrel(handler, 2*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 4*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 6*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 8*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 10*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 12*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 14*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 16*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 18*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 6*Tile.TILEWIDTH, 0*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 18*Tile.TILEWIDTH, 0*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 24*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 24*Tile.TILEWIDTH, 0*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 26*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 28*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 30*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 32*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 34*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 36*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Barrel(handler, 36*Tile.TILEWIDTH, 0*Tile.TILEHEIGHT));
         
         
-        entityManager.addEntity(new Barrel(handler, 6*Tile.TILEWIDTH, 12*Tile.TILEHEIGHT));
-         entityManager.addEntity(new Barrel(handler, 14*Tile.TILEWIDTH, 12*Tile.TILEHEIGHT));
-         
-         
-         entityManager.addEntity(new Barrel(handler, 10*Tile.TILEWIDTH, 16*Tile.TILEHEIGHT));
         
-         entityManager.addEntity(new Barrel(handler, 10*Tile.TILEWIDTH, 8*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Sign(handler, 6*Tile.TILEWIDTH, 10*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Sign(handler, 22*Tile.TILEWIDTH, 10*Tile.TILEHEIGHT));   
+        entityManager.addEntity(new Sign(handler, 14*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));      
+        entityManager.addEntity(new Sign(handler, 26*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        
+        entityManager.addEntity(new Fence(handler, 8*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 9*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 10*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 11*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 12*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 13*Tile.TILEWIDTH, 18*Tile.TILEHEIGHT));
         
         
         
         
+        entityManager.addEntity(new Fence(handler, 20*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 21*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 22*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 23*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 24*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 25*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 28*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 29*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 30*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
+        entityManager.addEntity(new Fence(handler, 31*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT)); 
         
+  
         loadWorld(path);
 
         entityManager.getPlayer().setX(spawnX);
