@@ -12,21 +12,28 @@ public class KeyManager implements KeyListener {
 
     public KeyManager() {
         keys = new boolean[256];
-         timer = 0;
+        timer = 0;
         lastTime = System.currentTimeMillis();
-        timeToWaitUntilTick = 256.0f ;  // zeit zwischen  jedem schritt in tiles.
+        timeToWaitUntilTick = 520.00f ;  
+                
+
     }
 
     public void tick() {
+        
         timer += System.currentTimeMillis() - lastTime;
         lastTime = System.currentTimeMillis();
         
         
          if (timer > timeToWaitUntilTick) {
+
+
          up = keys[KeyEvent.VK_W];
         down = keys[KeyEvent.VK_S];
         left = keys[KeyEvent.VK_A];
         right = keys[KeyEvent.VK_D];
+        
+        
        timer = 0 ;  
        
         }

@@ -76,17 +76,17 @@ public class Player extends Creatures {
     @Override
     public void render(Graphics g) {
 
-        g.drawImage(getCurrentAnimationFrame(), (int) (x * Tile.TILEWIDTH - handler.getGameCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()), width, height, null);
+        g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y  - handler.getGameCamera().getyOffset()), width, height, null);
         
         
         // HitBox Rectagle  :D 
         
-        /*
+        
         g.setColor(Color.RED);
-        g.fillRect((int) (x * Tile.TILEWIDTH + bounds.x - handler.getGameCamera().getxOffset()),
-                (int) (y * Tile.TILEHEIGHT + bounds.y - handler.getGameCamera().getyOffset()),
+        g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
+                (int) (y  + bounds.y - handler.getGameCamera().getyOffset()),
                 bounds.width, bounds.height);
-          */    
+            
     }
 
     private BufferedImage getCurrentAnimationFrame() {

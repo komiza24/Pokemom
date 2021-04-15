@@ -28,7 +28,7 @@ public abstract class Entity {
     public abstract void render(Graphics g);
     
     
-    /*
+    
     
     
     public boolean checkEntitiyCollision(float xOffset, float yOffset){
@@ -53,7 +53,7 @@ public abstract class Entity {
            return new Rectangle((int)(x - bounds.x + xOffset),(int)(y + bounds.y + yOffset), bounds.width, bounds.height); 
     }
     
-    */
+    
     
     
     
