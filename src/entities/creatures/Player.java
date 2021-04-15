@@ -16,7 +16,13 @@ public class Player extends Creatures {
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creatures.DEFAULT_CREATURE_WIDTH, Creatures.DEFAULT_CREATURE_HEIGHT);
+     
         
+        // 63 cause sliding from right to a wall wasynt functioning
+            bounds.x = 0; 
+            bounds.y = 0; 
+            bounds.width = 63; 
+            bounds.height = 63; 
       
         
 
@@ -81,12 +87,12 @@ public class Player extends Creatures {
         
         // HitBox Rectagle  :D 
         
-        
+       /*
         g.setColor(Color.RED);
         g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
                 (int) (y  + bounds.y - handler.getGameCamera().getyOffset()),
                 bounds.width, bounds.height);
-            
+         */
     }
 
     private BufferedImage getCurrentAnimationFrame() {

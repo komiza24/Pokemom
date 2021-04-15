@@ -14,7 +14,7 @@ public class KeyManager implements KeyListener {
         keys = new boolean[256];
         timer = 0;
         lastTime = System.currentTimeMillis();
-        timeToWaitUntilTick = 520.00f ;  
+        timeToWaitUntilTick = 260f ;  
                 
 
     }
@@ -28,7 +28,7 @@ public class KeyManager implements KeyListener {
          if (timer > timeToWaitUntilTick) {
 
 
-         up = keys[KeyEvent.VK_W];
+        up = keys[KeyEvent.VK_W];
         down = keys[KeyEvent.VK_S];
         left = keys[KeyEvent.VK_A];
         right = keys[KeyEvent.VK_D];
@@ -36,7 +36,7 @@ public class KeyManager implements KeyListener {
         
        timer = 0 ;  
        
-        }
+      }
         
     
     }
