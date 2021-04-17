@@ -2,11 +2,9 @@ package entities.creatures;
 
 import gfx.Animation;
 import gfx.Assets;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import pokemon.Handler;
-import tiles.Tile;
 
 public class Player extends Creatures {
 
