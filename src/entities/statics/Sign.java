@@ -20,8 +20,8 @@ public class Sign extends StaticEntity {
         super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
         bounds.x = 0; 
         bounds.y = 0; 
-        bounds.width = 64; 
-        bounds.height = 64; 
+        bounds.width = Tile.TILEWIDTH*2; 
+        bounds.height = Tile.TILEHEIGHT*2; 
         
     }
 

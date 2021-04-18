@@ -5,6 +5,7 @@ import entities.creatures.Player;
 import entities.statics.Barrel;
 import entities.statics.Fence;
 import entities.statics.Sign;
+import entities.statics.houseType1;
 import java.awt.Graphics;
 import pokemon.Handler;
 import tiles.Tile;
@@ -124,6 +125,11 @@ public class World {
         entityManager.addEntity(new Fence(handler, 29*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
         entityManager.addEntity(new Fence(handler, 30*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT));
         entityManager.addEntity(new Fence(handler, 31*Tile.TILEWIDTH, 26*Tile.TILEHEIGHT)); 
+        
+        
+        entityManager.addEntity(new houseType1(handler, 8*Tile.TILEWIDTH, 6*Tile.TILEHEIGHT));
+        entityManager.addEntity(new houseType1(handler, 24*Tile.TILEWIDTH, 6*Tile.TILEHEIGHT));
+        
         
   
         loadWorld(path);

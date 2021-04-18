@@ -20,8 +20,8 @@ public class Fence extends StaticEntity {
         super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
         bounds.x = 0; 
         bounds.y = 0; 
-        bounds.width = 32; 
-        bounds.height = 64; 
+        bounds.width = Tile.TILEWIDTH; 
+        bounds.height =  Tile.TILEHEIGHT*2; 
         
     }
 
