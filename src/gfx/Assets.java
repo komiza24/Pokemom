@@ -143,7 +143,7 @@ public class Assets {
         treeLeftBot = tileSet_1.crop(0, height * 5, width, height);
         treeRightBot = tileSet_1.crop(width, height * 5, width, height);
         grassHigh = tileSet_1.crop(width * 2, height * 5, width, height);
-        house2RoofEdgeBack = tileSet_1.crop(width * 3, height * 4, width, height);
+        house2RoofEdgeBack = tileSet_1.crop(width * 3, height * 5, width, height);
         wallRight = tileSet_1.crop(width * 4, height * 5, width, height);
         fenceBot = tileSet_1.crop(width * 5, height * 5, width, height);
         signBotLeft = tileSet_1.crop(width * 6, height * 5, width, height);

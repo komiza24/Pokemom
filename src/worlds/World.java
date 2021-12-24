@@ -4,6 +4,7 @@ import entities.EntityManager;
 import entities.creatures.Player;
 import entities.statics.Barrel;
 import entities.statics.Fence;
+import entities.statics.OaksLab;
 import entities.statics.Sign;
 import entities.statics.houseType1;
 import java.awt.Graphics;
@@ -129,6 +130,8 @@ public class World {
         
         entityManager.addEntity(new houseType1(handler, 8*Tile.TILEWIDTH, 6*Tile.TILEHEIGHT));
         entityManager.addEntity(new houseType1(handler, 24*Tile.TILEWIDTH, 6*Tile.TILEHEIGHT));
+        
+        entityManager.addEntity(new OaksLab(handler, 20*Tile.TILEWIDTH, 16*Tile.TILEHEIGHT));
         
         
   

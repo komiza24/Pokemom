@@ -7,6 +7,7 @@ public class KeyManager implements KeyListener {
 
     private boolean[] keys;
     public boolean up, down, left, right;
+    
     private long lastTime, timer;
     private float timeToWaitUntilTick;
 
